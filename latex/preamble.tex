@@ -1,6 +1,7 @@
 \usepackage{booktabs}
 \usepackage{longtable}
 \usepackage[bf,singlelinecheck=off]{caption}
+\usepackage{enumitem}
 
 \usepackage{framed,color}
 \definecolor{shadecolor}{RGB}{248,248,248}
@@ -34,17 +35,19 @@
  \at@end@of@kframe}
 \makeatother
 
-\renewenvironment{Shaded}{\begin{kframe}}{\end{kframe}}
+\newenvironment{Shaded}{\begin{kframe}}{\end{kframe}}
 
 % create callout boxes:
 \newenvironment{rmdblock}[1]
   {\begin{shaded*}
-  \begin{itemize}
+   %\addtolength{\leftmargini}{-1cm}
+  \begin{itemize}[left = -1cm, labelsep = 1cm]
   \renewcommand{\labelitemi}{
     \raisebox{-.7\height}[0pt][0pt]{
       {\setkeys{Gin}{width=3em,keepaspectratio}\includegraphics{images/#1}}
     }
   }
+ 
   \item
   }
   {
